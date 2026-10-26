@@ -1,0 +1,23 @@
+# Dữ liệu lớn: mỗi người tự tải (xem README)
+data/*
+!data/.gitkeep
+!data/SCHEMA.md
+
+# Python / Spark / Hive
+__pycache__/
+*.pyc
+.venv/
+spark-warehouse/
+metastore_db/
+derby.log
+*.crc
+*.log
+
+# Bí mật
+.env
+kaggle.json
+
+# File sinh ra khi gộp báo cáo
+baocao.pdf
+baocao.docx
+.DS_Store

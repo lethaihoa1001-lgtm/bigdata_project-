@@ -1,0 +1,59 @@
+# Môi trường demo cho cả nhóm. CHƯA kiểm thử trên máy nhóm: người chạy đầu tiên
+# hãy sửa phiên bản image nếu cần rồi commit lại (feat/chore).
+# Dữ liệu dùng chung qua thư mục ./data (mount vào các container).
+# Impala nặng nên TV4 chạy riêng bằng bộ quickstart của Apache Impala,
+# trỏ cùng thư mục data/processed.
+name: bigdata-final
+
+services:
+  spark:
+    image: apache/spark:3.5.1-python3
+    container_name: spark
+    user: root
+    working_dir: /workspace
+    command: ["tail", "-f", "/dev/null"]   # giữ container sống, chạy lệnh bằng docker compose exec
+    environment:
+      DATA_DIR: /workspace/data
+    volumes:
+      - ./:/workspace
+    ports:
+      - "4040:4040"   # Spark UI khi đang chạy job
+
+  hive:
+    image: apache/hive:4.0.0
+    container_name: hive
+    environment:
+      SERVICE_NAME: hiveserver2
+    ports:
+      - "10000:10000"   # JDBC (beeline)
+      - "10002:10002"   # HiveServer2 web UI
+    volumes:
+      - ./data:/data
+      - ./demo:/demo
+
+  zoo1:
+    image: zookeeper:3.9.2
+    container_name: zoo1
+    hostname: zoo1
+    ports: ["2181:2181"]
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: "server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181"
+
+  zoo2:
+    image: zookeeper:3.9.2
+    container_name: zoo2
+    hostname: zoo2
+    ports: ["2182:2181"]
+    environment:
+      ZOO_MY_ID: 2
+      ZOO_SERVERS: "server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181"
+
+  zoo3:
+    image: zookeeper:3.9.2
+    container_name: zoo3
+    hostname: zoo3
+    ports: ["2183:2181"]
+    environment:
+      ZOO_MY_ID: 3
+      ZOO_SERVERS: "server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181"
