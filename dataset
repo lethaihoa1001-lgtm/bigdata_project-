@@ -1,8 +1,0 @@
-# Hướng dẫn tải Dataset Thương mại điện tử (Olist)
-
-Tập dữ liệu này nặng nên không lưu trực tiếp trên Git. 
-Các thành viên trong nhóm vui lòng tải bộ dữ liệu theo các bước sau:
-
-1. Truy cập link Kaggle: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/data
-2. Bấm nút **Download** để tải file `.zip` về máy.
-3. Giải nén tất cả các file `.csv` vào chính thư mục `dataset/` này trên máy cá nhân của bạn.
