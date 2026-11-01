@@ -1,0 +1,14 @@
+# Cấu hình riêng từng máy
+local_config.py
+
+# Môi trường ảo và file Spark/Hive rác
+venv/
+.venv/
+metastore_db/
+derby.log
+spark-warehouse/
+__pycache__/
+
+# Dữ liệu gốc và kho Parquet chi tiết: tải lại từ Kaggle và chạy lại pipeline để sinh ra
+Order_delivery.csv
+data_parquet/

@@ -1,0 +1,6 @@
+format,median_seconds
+CSV,0.692
+Parquet,0.299
+size_mb_csv,19.28
+size_mb_parquet_clean,8.21
+size_mb_parquet_transformed,8.85

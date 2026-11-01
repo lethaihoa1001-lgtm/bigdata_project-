@@ -1,0 +1,11 @@
+# Phần cuối kì (Olist): Spark, Spark SQL, DuckDB
+# Cần thêm Java 17 (không cài bằng pip), xem docs/chay-khong-docker.md
+pyspark
+duckdb
+pyspark
+pandas<3
+pyarrow
+openpyxl
+jupyter
+ipykernel
+matplotlib

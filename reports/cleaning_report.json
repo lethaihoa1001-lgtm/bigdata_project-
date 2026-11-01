@@ -1,0 +1,6 @@
+{
+  "raw_rows": 100002,
+  "clean_rows": 100002,
+  "removed": 0,
+  "parquet_writer": "spark"
+}
