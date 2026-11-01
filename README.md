@@ -26,7 +26,7 @@ Cách cài môi trường để chạy code nằm ở file **`README_SETUP.md`**
 | **Bạn 2** | Biến đổi dữ liệu | `transformation.py` | `data_parquet/clean/` | `data_parquet/transformed/` | Xong |
 | **Bạn 3** | Tổng hợp & thống kê | `aggregation.ipynb` | `data_parquet/transformed/` | thư mục `output/` (10 file Excel) | Xong |
 | **Bạn 4** | Lưu vào Parquet | `save_parquet.py` | `data_parquet/transformed/` | thư mục `parquet_output/` (5 bảng Parquet) | Xong |
-| **Bạn 5** | Trực quan hóa & báo cáo | (tự viết) | `parquet_output/` | Biểu đồ + báo cáo | **Đang làm** |
+| **Bạn 5** | Trực quan hóa & báo cáo | (tự viết) | `parquet_output/` | Biểu đồ + báo cáo | **Đã làm** |
 
 Sơ đồ luồng dữ liệu:
 
